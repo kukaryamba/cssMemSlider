@@ -1,0 +1,11 @@
+.wrapper {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.slider{
+    width: 300px;
+    height: 200px;
+    background-color: rgba(9, 241, 230, 0.993);
+    text-align: center;
+}
