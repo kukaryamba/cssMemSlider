@@ -4,23 +4,24 @@
 }
 
 .slider{
-    margin-top: 70px;
+    margin-top: 4em;
     width: 500px;
     height: 450px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 20px; 
+    row-gap: 1em; 
 }
 
 .photo_place {
-    height: 30vw;
+    height: 30vw;    
 }
 
 img {
     width: 50vw;
-    
+    height: 30vw;
+    border-radius: 10px;
 }
 
 .mem {
@@ -31,6 +32,8 @@ img {
     text-align: left;
     font-size: 1.5rem;
     display: none;
+    color: rgb(21, 95, 3);
+    font-weight: bold;
 }
 
 input:nth-of-type(1):checked  ~ .photo_place > .mem:nth-of-type(1),
@@ -38,36 +41,21 @@ input:nth-of-type(2):checked  ~ .photo_place > .mem:nth-of-type(2),
 input:nth-of-type(3):checked  ~ .photo_place > .mem:nth-of-type(3),
 input:nth-of-type(4):checked  ~ .photo_place > .mem:nth-of-type(4) {
     display: block;
+    transition: 4s all;
 }
 
-@media screen and (max-width: 768px) { 
-    img {
-        width: 80vw;
-    }
-
-    .photo_place {
-        height: 50vw;
-    }
-
-    .controller {
-        
-        justify-content: space-around;
-        align-items: center;
-    }
-}
 
 .underPic {
     width: 50vw;
     display: flex;
     justify-content: space-between;
-    margin-top: 5em;
 }
 
 .controller {
     display: flex;
     justify-content: end;
     align-items: center;
-    column-gap: 15px;
+    column-gap: 1em;
     
 }
 
@@ -76,33 +64,56 @@ input[type=radio] {
 }
 
 label {
-    border: 3px solid rgb(51, 255, 0);
-    border-radius: 50px;
+    border: 2px solid green;
+    border-radius: 5px;
+    background: linear-gradient(to right, green, yellow);
     width: 3em;
-    height: 1em;
-    content: " ";/* 
-    padding: 0 25px; */
+    height: 0.5em;
+    content: " ";
 }
 
 
 label:hover {
-    border-color: rgb(52, 243, 138);
+    background: linear-gradient(to left, green, yellow);
+    opacity: 0.8;
     cursor: pointer;
 }
 
-/* input:checked ~ .controller > label {
-	background-color: rgb(51, 255, 0);
-}
- */
 input:nth-of-type(1):checked  ~ .underPic > .controller > label:nth-of-type(1),
 input:nth-of-type(2):checked  ~ .underPic > .controller > label:nth-of-type(2),
 input:nth-of-type(3):checked  ~ .underPic > .controller > label:nth-of-type(3),
 input:nth-of-type(4):checked  ~ .underPic > .controller > label:nth-of-type(4) {
-    background-color: rgb(51, 255, 0);
+    background: green;
+    
 }
+
 input:nth-of-type(1):checked  ~ .underPic > .titles > .title:nth-of-type(1),
 input:nth-of-type(2):checked  ~ .underPic > .titles > .title:nth-of-type(2),
 input:nth-of-type(3):checked  ~ .underPic > .titles > .title:nth-of-type(3),
 input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
     display: block;
+}
+
+
+@media screen and (max-width: 768px) { 
+    img {
+        width: 80vw;
+        height: 50vw;
+    }
+
+    .photo_place {
+        height: 50vw;
+        width: 80vw;
+    }
+
+  /*   .controller {
+        
+        justify-content: space-around;
+        align-items: center;
+        justify-self: flex-start;
+    }
+ */
+    .underPic {
+        width: 80vw;
+    }
 }
