@@ -11,18 +11,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 20px;
+    row-gap: 20px; 
 }
 
+.photo_place {
+    height: 30vw;
+}
 
+img {
+    width: 50vw;
+    
+}
 
 .mem {
-    width: 50vw;
-    /* opacity: 0; */
+    display: none;
 }
 
-input:nth-of-type(1):checked  ~ .photo_place .mem:nth-of-type(1){
-    opacity: 1;
+p {
+    text-align: left;
+}
+
+input:nth-of-type(1):checked  ~ .photo_place > .mem:nth-of-type(1),
+input:nth-of-type(2):checked  ~ .photo_place > .mem:nth-of-type(2),
+input:nth-of-type(3):checked  ~ .photo_place > .mem:nth-of-type(3),
+input:nth-of-type(4):checked  ~ .photo_place > .mem:nth-of-type(4) {
+    display: block;
 }
 
 @media screen and (max-width: 768px) { 
@@ -31,30 +44,26 @@ input:nth-of-type(1):checked  ~ .photo_place .mem:nth-of-type(1){
     }
 }
 
-
-.not_showing {
-    display: none;
-}
-
 .controller {
     display: flex;
-    width: 250px;
-    justify-content: space-around;
-    column-gap: 15px;/* 
-    margin: 0 auto; */
+    width: 50vw;
+    justify-content: end;
+    align-items: flex-end;
+    column-gap: 15px;
+    margin-top: 5em;
 }
 
 input[type=radio] {
 	display: none;
 }
 
- label {
+label {
     border: 3px solid rgb(51, 255, 0);
     border-radius: 50px;
     width: 45px;
     height: 15px;
-    content: " ";
-    padding: 0 25px;
+    content: " ";/* 
+    padding: 0 25px; */
 }
 
 
@@ -63,6 +72,13 @@ label:hover {
     cursor: pointer;
 }
 
- input:checked + label {
-	background-color: rgb(51, 255, 0)
+/* input:checked ~ .controller > label {
+	background-color: rgb(51, 255, 0);
+}
+ */
+input:nth-of-type(1):checked  ~ .controller > label:nth-of-type(1),
+input:nth-of-type(2):checked  ~ .controller > label:nth-of-type(2),
+input:nth-of-type(3):checked  ~ .controller > label:nth-of-type(3),
+input:nth-of-type(4):checked  ~ .controller > label:nth-of-type(4) {
+    background-color: rgb(51, 255, 0);
 }
