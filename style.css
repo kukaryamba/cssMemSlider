@@ -15,7 +15,8 @@
 }
 
 .photo_place {
-    height: 30vw;    
+    height: 30vw;  
+    z-index: 0;  
 }
 
 img {
@@ -26,6 +27,13 @@ img {
 
 .mem {
     display: none;
+    opacity: 0; 
+}
+
+@keyframes memIn {
+    0% {
+        opacity: 0;
+    }
 }
 
 .title {
@@ -34,15 +42,28 @@ img {
     display: none;
     color: rgb(21, 95, 3);
     font-weight: bold;
+    
 }
+
+@keyframes textIn {
+    0% {
+        opacity: 0;
+        margin-left: -20px;
+    }
+}
+
 
 input:nth-of-type(1):checked  ~ .photo_place > .mem:nth-of-type(1),
 input:nth-of-type(2):checked  ~ .photo_place > .mem:nth-of-type(2),
 input:nth-of-type(3):checked  ~ .photo_place > .mem:nth-of-type(3),
 input:nth-of-type(4):checked  ~ .photo_place > .mem:nth-of-type(4) {
     display: block;
-    transition: 4s all;
+    opacity: 1;
+    animation: memIn 3s 1;
 }
+
+
+
 
 
 .underPic {
@@ -79,6 +100,8 @@ label:hover {
     cursor: pointer;
 }
 
+
+
 input:nth-of-type(1):checked  ~ .underPic > .controller > label:nth-of-type(1),
 input:nth-of-type(2):checked  ~ .underPic > .controller > label:nth-of-type(2),
 input:nth-of-type(3):checked  ~ .underPic > .controller > label:nth-of-type(3),
@@ -91,8 +114,11 @@ input:nth-of-type(1):checked  ~ .underPic > .titles > .title:nth-of-type(1),
 input:nth-of-type(2):checked  ~ .underPic > .titles > .title:nth-of-type(2),
 input:nth-of-type(3):checked  ~ .underPic > .titles > .title:nth-of-type(3),
 input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
-    display: block;
+    display: block; 
+    animation: textIn 2s 1 both;
 }
+
+
 
 
 @media screen and (max-width: 768px) { 
