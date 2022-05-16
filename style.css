@@ -1,5 +1,5 @@
 .wrapper {
-    width: 600px;
+    width: 37em;
     margin: 0 auto;
 }
 
@@ -27,8 +27,10 @@ img {
     display: none;
 }
 
-p {
+.title {
     text-align: left;
+    font-size: 1.5rem;
+    display: none;
 }
 
 input:nth-of-type(1):checked  ~ .photo_place > .mem:nth-of-type(1),
@@ -39,18 +41,34 @@ input:nth-of-type(4):checked  ~ .photo_place > .mem:nth-of-type(4) {
 }
 
 @media screen and (max-width: 768px) { 
-    .mem {
+    img {
         width: 80vw;
     }
+
+    .photo_place {
+        height: 50vw;
+    }
+
+    .controller {
+        
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.underPic {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5em;
 }
 
 .controller {
     display: flex;
-    width: 50vw;
     justify-content: end;
-    align-items: flex-end;
+    align-items: center;
     column-gap: 15px;
-    margin-top: 5em;
+    
 }
 
 input[type=radio] {
@@ -60,8 +78,8 @@ input[type=radio] {
 label {
     border: 3px solid rgb(51, 255, 0);
     border-radius: 50px;
-    width: 45px;
-    height: 15px;
+    width: 3em;
+    height: 1em;
     content: " ";/* 
     padding: 0 25px; */
 }
@@ -76,9 +94,15 @@ label:hover {
 	background-color: rgb(51, 255, 0);
 }
  */
-input:nth-of-type(1):checked  ~ .controller > label:nth-of-type(1),
-input:nth-of-type(2):checked  ~ .controller > label:nth-of-type(2),
-input:nth-of-type(3):checked  ~ .controller > label:nth-of-type(3),
-input:nth-of-type(4):checked  ~ .controller > label:nth-of-type(4) {
+input:nth-of-type(1):checked  ~ .underPic > .controller > label:nth-of-type(1),
+input:nth-of-type(2):checked  ~ .underPic > .controller > label:nth-of-type(2),
+input:nth-of-type(3):checked  ~ .underPic > .controller > label:nth-of-type(3),
+input:nth-of-type(4):checked  ~ .underPic > .controller > label:nth-of-type(4) {
     background-color: rgb(51, 255, 0);
+}
+input:nth-of-type(1):checked  ~ .underPic > .titles > .title:nth-of-type(1),
+input:nth-of-type(2):checked  ~ .underPic > .titles > .title:nth-of-type(2),
+input:nth-of-type(3):checked  ~ .underPic > .titles > .title:nth-of-type(3),
+input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
+    display: block;
 }
