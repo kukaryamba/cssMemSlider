@@ -36,6 +36,7 @@ img {
     }
 }
 
+
 .title {
     text-align: left;
     font-size: 1.5rem;
@@ -52,18 +53,14 @@ img {
     }
 }
 
-
 input:nth-of-type(1):checked  ~ .photo_place > .mem:nth-of-type(1),
 input:nth-of-type(2):checked  ~ .photo_place > .mem:nth-of-type(2),
 input:nth-of-type(3):checked  ~ .photo_place > .mem:nth-of-type(3),
 input:nth-of-type(4):checked  ~ .photo_place > .mem:nth-of-type(4) {
     display: block;
     opacity: 1;
-    animation: memIn 3s 1;
+    animation: memIn 3s;
 }
-
-
-
 
 
 .underPic {
@@ -123,23 +120,39 @@ input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
 
 @media screen and (max-width: 768px) { 
     img {
-        width: 80vw;
+        width: 90vw;
         height: 50vw;
     }
 
     .photo_place {
         height: 50vw;
-        width: 80vw;
+        width: 90vw;
     }
 
-  /*   .controller {
-        
-        justify-content: space-around;
-        align-items: center;
-        justify-self: flex-start;
-    }
- */
     .underPic {
-        width: 80vw;
+        width: 90vw;
     }
+}
+
+@media screen and (max-width: 480px){
+    label {
+        width: 2em;
+        height: 0.5em;
+        
+    }
+    .underPic  {
+        flex-direction: column-reverse;
+        /* justify-content: space-around;
+        align-items: center;
+        justify-self: flex-start; */
+    }
+
+    .controller {
+        align-self: center;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
 }
