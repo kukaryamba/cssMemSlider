@@ -5,8 +5,8 @@
 
 .slider{
     margin-top: 4em;
-    width: 500px;
-    height: 450px;
+    width: 31em;
+    height: 28em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ img {
 @keyframes textIn {
     0% {
         opacity: 0;
-        margin-left: -20px;
+        margin-left: 1.5em;
     }
 }
 
@@ -139,19 +139,6 @@ input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
 }
 
 @media screen and (max-width: 480px){
-    /* .wrapper {
-        width: 90%;
-    }
-
-    img {
-        width: 90vw;
-        height: auto;
-    }
- 
-    .photo_place{
-        width: 90vw;
-        height: auto;
-    } */
      
     label {
         width: 2em;
@@ -162,9 +149,6 @@ input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
     
     .underPic  {
         flex-direction: column-reverse;
-        /* justify-content: space-around;
-        align-items: center;
-        justify-self: flex-start; */
     }
 
     .controller {
