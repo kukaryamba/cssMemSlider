@@ -1,0 +1,162 @@
+.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.slider{
+    margin-top: 4em;
+    width: 31em;
+    height: 28em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em; 
+}
+
+.photo_place {
+    height: 30vw;  
+    z-index: 0;  
+}
+
+img {
+    width: 50vw;
+    height: 30vw;
+    border-radius: 10px;
+}
+
+.mem {
+    display: none;
+    opacity: 0; 
+}
+
+@keyframes memIn {
+    0% {
+        opacity: 0;
+    }
+}
+
+
+.title {
+    text-align: left;
+    font-size: 1.5rem;
+    display: none;
+    color: rgb(21, 95, 3);
+    font-weight: bold;
+    
+}
+
+@keyframes textIn {
+    0% {
+        opacity: 0;
+        margin-left: 1.5em;
+    }
+}
+
+input:nth-of-type(1):checked  ~ .photo_place > .mem:nth-of-type(1),
+input:nth-of-type(2):checked  ~ .photo_place > .mem:nth-of-type(2),
+input:nth-of-type(3):checked  ~ .photo_place > .mem:nth-of-type(3),
+input:nth-of-type(4):checked  ~ .photo_place > .mem:nth-of-type(4) {
+    display: block;
+    opacity: 1;
+    animation: memIn 3s;
+}
+
+
+.underPic {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controller {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 1em;
+    
+}
+
+input[type=radio] {
+	display: none;
+}
+
+label {
+    border: 7px solid white;
+    border-radius: 5px;
+    background: linear-gradient(to right, green, yellow);
+    width: 3em;
+    height: 0.5em;
+    content: " ";
+}
+
+
+label:hover {
+    background: linear-gradient(to left, green, yellow);
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+label:active{
+    background: linear-gradient(to left, rgb(38, 129, 2), rgb(81, 255, 0));;
+}
+
+
+
+input:nth-of-type(1):checked  ~ .underPic > .controller > label:nth-of-type(1),
+input:nth-of-type(2):checked  ~ .underPic > .controller > label:nth-of-type(2),
+input:nth-of-type(3):checked  ~ .underPic > .controller > label:nth-of-type(3),
+input:nth-of-type(4):checked  ~ .underPic > .controller > label:nth-of-type(4) {
+    background: green;
+    
+}
+
+input:nth-of-type(1):checked  ~ .underPic > .titles > .title:nth-of-type(1),
+input:nth-of-type(2):checked  ~ .underPic > .titles > .title:nth-of-type(2),
+input:nth-of-type(3):checked  ~ .underPic > .titles > .title:nth-of-type(3),
+input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
+    display: block; 
+    animation: textIn 2s 1 both;
+}
+
+
+
+
+@media screen and (max-width: 768px) { 
+    img {
+        width: 90vw;
+        height: 50vw;
+    }
+
+    .photo_place {
+        height: 50vw;
+        width: 90vw;
+    }
+
+    .underPic {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 480px){
+     
+    label {
+        width: 2em;
+        height: 0.5em;
+        
+    }
+
+    
+    .underPic  {
+        flex-direction: column-reverse;
+    }
+
+    .controller {
+        align-self: center;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+}
