@@ -1,5 +1,5 @@
 .wrapper {
-    width: 37em;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -82,7 +82,7 @@ input[type=radio] {
 }
 
 label {
-    border: 2px solid green;
+    border: 7px solid white;
     border-radius: 5px;
     background: linear-gradient(to right, green, yellow);
     width: 3em;
@@ -95,6 +95,10 @@ label:hover {
     background: linear-gradient(to left, green, yellow);
     opacity: 0.8;
     cursor: pointer;
+}
+
+label:active{
+    background: linear-gradient(to left, rgb(38, 129, 2), rgb(81, 255, 0));;
 }
 
 
@@ -135,11 +139,27 @@ input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
 }
 
 @media screen and (max-width: 480px){
+    .wrapper {
+        width: 100vw;
+    }
+
+    img {
+        width: 100vw;
+        max-height: 30vh;
+    }
+ 
+    .photo_place{
+        width: 100vw;
+        max-height: 30vh;
+    }
+     
     label {
         width: 2em;
         height: 0.5em;
         
     }
+
+    
     .underPic  {
         flex-direction: column-reverse;
         /* justify-content: space-around;
@@ -152,7 +172,7 @@ input:nth-of-type(4):checked  ~ .underPic > .titles > .title:nth-of-type(4) {
     }
 
     .title {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
 }
